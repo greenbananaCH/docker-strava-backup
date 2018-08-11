@@ -8,11 +8,18 @@ This dockerized implementation of [strava-backup](https://github.com/pR0Ps/strav
 - To create a token with extra permissions (ex. 'permissions: view_private,write') follow [this](https://yizeng.me/2017/01/11/get-a-strava-api-access-token-with-write-permission) procedure. 
 - Populate the secret_strava-backup_config file accordingly.  
 
-## Building & running the container 
+## Building & running the container on 
 ```bash 
 docker build -t docker-strava-backup .
 docker run -v /path/where/to/save/your/docker-strava-backup-data:/home/stravabackup/data -it docker-strava-backup
 ```
 
-## Running the container on Synology
-- ToDo
+## Running the container on AWS (incomplete)
+### Creating an Amazon Elastic Container Registry (ECR)
+- Log on to your AWS account and head over to the Elastic Container Service
+- Create a new repository (ECR)
+- Configure aws-cli access if you have not done this before -> 'aws configure', create your Access Keys in AWS/IAM
+- Follow the instructions (View Push Commands) as provided by AWS/ECR to push from your build server to ECR
+### Creating an Amazon Elastic Container Registry (ECR)
+
+## Running the container on Synology (ToDo)
