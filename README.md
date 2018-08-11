@@ -20,6 +20,7 @@ docker run -v /path/where/to/save/your/docker-strava-backup-data:/home/stravabac
 - Create a new repository (ECR)
 - Configure aws-cli access if you have not done this before -> 'aws configure', create your Access Keys in AWS/IAM
 - Follow the instructions (View Push Commands) as provided by AWS/ECR to push from your build server to ECR
-### Creating an Amazon Elastic Container Registry (ECR)
+### Running the Container in Amazon Elastic Container Service (ECS) or AWS Fargate (ToDo)
+- To store the data in a persistant way you'll need to leverage EFS or work with Elastic Volumes. 
 
 ## Running the container on Synology (ToDo)
