@@ -1,15 +1,15 @@
 FROM frolvlad/alpine-python3
 
-RUN apk update && apk upgrade 
+RUN apk update --no-cache && apk upgrade --no-cache \
+    && apk add --no-cache su-exec \ 
+    && pip install --upgrade pip && pip install strava-backup
 
-RUN apk add --no-cache crond su-exec
-
-RUN pip install strava-backup
-
-RUN adduser -D -g '' stravabackup
-RUN mkdir -p /home/stravabackup/data && mkdir -p /home/stravabackup/.config
+RUN adduser -D -g '' stravabackup \
+    && mkdir -p /home/stravabackup/data && mkdir -p /home/stravabackup/.config
 ADD secret_strava-backup_config /home/stravabackup/.config/strava-backup.conf
 RUN chown -R stravabackup /home/stravabackup
 
-RUN echo '*/15 * * * * strava-backup 2>&1' > /etc/crontabs/stravabackup
-CMD ['crond', '-l 2', '-f']
+ADD stravabackup_crontab /etc/periodic/15min/stravabackup
+RUN chmod a+x /etc/periodic/15min/stravabackup 
+
+CMD ["/usr/sbin/crond","-f"]
