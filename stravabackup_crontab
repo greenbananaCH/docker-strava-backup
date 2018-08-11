@@ -1,0 +1,2 @@
+#!/bin/sh
+/sbin/su-exec stravabackup /usr/bin/strava-backup 2>&1 
