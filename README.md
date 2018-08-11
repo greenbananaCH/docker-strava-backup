@@ -8,7 +8,7 @@ This dockerized implementation of [strava-backup](https://github.com/pR0Ps/strav
 - To create a token with extra permissions (ex. 'permissions: view_private,write') follow [this](https://yizeng.me/2017/01/11/get-a-strava-api-access-token-with-write-permission) procedure. 
 - Populate the secret_strava-backup_config file accordingly.  
 
-## Building & running the container on 
+## Building & running the container locally
 ```bash 
 docker build -t docker-strava-backup .
 docker run -v /path/where/to/save/your/docker-strava-backup-data:/home/stravabackup/data -it docker-strava-backup
