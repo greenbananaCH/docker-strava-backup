@@ -1,7 +1,7 @@
 # docker-strava-backup
 > A dockerized version of [strava-backup](https://github.com/pR0Ps/strava-backup).  
 
-This dockerized implementation of [strava-backup](https://github.com/pR0Ps/strava-backup) is based on [Alpine Linux](https://hub.docker.com/r/_/alpine/) and checks daily for updated content on your [Strava](https://www.strava.com)-account.
+This dockerized implementation of [strava-backup](https://github.com/pR0Ps/strava-backup) is based on [Alpine Linux](https://hub.docker.com/r/_/alpine) and checks on a daily basis for updated content on your [Strava](https://www.strava.com)-account.
 
 ## Preparation
 - Go to https://www.strava.com/settings/api and create a token, this will 'only' give you a token with 'permissions: public'. 
