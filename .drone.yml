@@ -7,5 +7,7 @@ steps:
   settings:
     repo: greenbanana/docker-strava-backup
     auto_tag: true
-    username: {{ HUB_USERNAME }}
-    password: {{ HUB_PASSWORD }}
+    username:
+      from_secret: HUB_USERNAME
+    password:
+      from_secret: HUB_PASSWORD
